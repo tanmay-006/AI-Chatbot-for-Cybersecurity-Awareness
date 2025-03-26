@@ -24,7 +24,7 @@ An interactive chatbot built with Flask and Google's Gemini AI model to educate 
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/tanmay-006/AI-Chatbot-for-Cybersecurity-Awareness.git
 cd AI-Chatbot-for-Cybersecurity-Awareness
 ```
 

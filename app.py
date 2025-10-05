@@ -10,6 +10,10 @@ CORS(app)  # Enable CORS for all routes - allows integration with college dashbo
 def index():
     return render_template("index.html")
 
+@app.route("/integration-example")
+def integration_example():
+    return render_template("integration-example.html")
+
 @app.route("/api/chat", methods=["POST", "GET"])
 def chat():
     # Handle both GET and POST requests

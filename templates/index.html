@@ -20,32 +20,11 @@
     
     <!-- Chat container (initially hidden) -->
     <div class="chat-container" id="chatContainer">
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Dashboard Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Add Marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Add highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
-</head>
-<body>
-    <!-- Chat toggle button -->
-    <button id="chatToggleBtn" class="chat-toggle-btn">
-        <i class="fas fa-comments"></i>
-    </button>
-    
-    <!-- Chat container (initially hidden) -->
-    <div class="chat-container" id="chatContainer">
         <header>
             <div class="header-content">
                 <div class="logo-area">
                     <i class="fas fa-university"></i>
-                    <h1>College Dashboard Assistant</h1>
+                    <h5>College Dashboard Assistant</h5>
                 </div>
                 <div class="controls">
                     <button id="clearBtn" title="Clear Conversation"><i class="fas fa-trash-alt"></i></button>
@@ -59,8 +38,8 @@
         
         <div class="chat-box" id="chatBox">
             <div class="message bot">
-                <div class="avatar"><i class="fas fa-robot"></i></div>
-                <div class="message-content">
+<!--                 <div class="avatar"><i class="fas fa-robot"></i></div>
+ -->                <div class="message-content">
                     <p>Hello! I'm your college dashboard assistant. Ask me anything about:</p>
                     <ul>
                         <li>Course registration and academic calendar</li>
@@ -74,21 +53,17 @@
             </div>
         </div>
         
-        <div class="suggestions" id="suggestions">
+        <!-- <div class="suggestions" id="suggestions">
             <button class="suggestion-btn">How do I register for courses?</button>
             <button class="suggestion-btn">When are final exams?</button>
             <button class="suggestion-btn">Where can I access my transcript?</button>
             <button class="suggestion-btn">What student resources are available?</button>
-        </div>
+        </div> -->
         
         <div class="input-area">
             <input type="text" id="userInput" placeholder="Type your message here...">
             <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
         </div>
-        
-        <footer>
-            <p>- by Tanmay Bandagale • <a href="#" id="aboutLink">About this chatbot</a></p>
-        </footer>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

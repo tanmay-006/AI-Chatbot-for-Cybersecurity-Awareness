@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Integration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #4b2e83;
+            color: white;
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            margin-bottom: 20px;
+        }
+        .dashboard-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-top: 4px solid #4b2e83;
+        }
+        .dashboard-card h3 {
+            margin-top: 0;
+            color: #4b2e83;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h1>College Dashboard</h1>
+            <p>Welcome to your student dashboard</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3>Courses</h3>
+                <p>You are enrolled in 4 courses this semester.</p>
+                <ul>
+                    <li>CS101: Introduction to Programming</li>
+                    <li>MATH201: Calculus II</li>
+                    <li>ENG105: Academic Writing</li>
+                    <li>HIST110: World History</li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Upcoming Assignments</h3>
+                <ul>
+                    <li>CS101 Project - Due Oct 10</li>
+                    <li>MATH201 Problem Set 3 - Due Oct 12</li>
+                    <li>ENG105 Essay Draft - Due Oct 15</li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Announcements</h3>
+                <p>Fall break begins on October 20th. Classes resume on October 24th.</p>
+                <p>Registration for Spring semester begins November 1st.</p>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Campus Events</h3>
+                <ul>
+                    <li>Career Fair - Oct 12, 10am-3pm, Student Center</li>
+                    <li>Football Game - Oct 15, 7pm, Stadium</li>
+                    <li>Guest Lecture: AI Ethics - Oct 18, 4pm, Auditorium</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the chatbot embed script here -->
+    <script src="{{ url_for('static', filename='js/chatbot-embed.js') }}"></script>
+</body>
+</html>

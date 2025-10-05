@@ -6,10 +6,10 @@
 }
 
 :root {
-    --primary-color: #0078d7;
-    --primary-color-dark: #005fa3;
+    --primary-color: #4b2e83;
+    --primary-color-dark: #371f5e;
     --bot-bg: #f0f0f0;
-    --user-bg: #0078d7;
+    --user-bg: #4b2e83;
     --user-text: white;
     --bot-text: #333;
     --bg-color: #f5f5f5;
@@ -18,10 +18,10 @@
 }
 
 .dark-mode {
-    --primary-color: #1e88e5;
-    --primary-color-dark: #0d47a1;
+    --primary-color: #6b4ca3;
+    --primary-color-dark: #4b2e83;
     --bot-bg: #2c2c2c;
-    --user-bg: #1e88e5;
+    --user-bg: #6b4ca3;
     --user-text: white;
     --bot-text: #e0e0e0;
     --bg-color: #121212;
@@ -36,6 +36,37 @@ body {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s;
+    position: relative; /* For positioning the chat toggle button */
+}
+
+/* Chat toggle button styles */
+.chat-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+    background-color: var(--primary-color-dark);
+    transform: scale(1.05);
+}
+
+.chat-toggle-btn:active {
+    transform: scale(0.95);
 }
 
 .chat-container {
@@ -48,7 +79,16 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    position: fixed; /* Fixed position for animations */
+    z-index: 999;
+}
+
+/* Hidden state for chat container */
+.chat-container.hidden {
+    transform: translateY(100vh);
+    opacity: 0;
+    pointer-events: none;
 }
 
 header {

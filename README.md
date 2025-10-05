@@ -1,24 +1,25 @@
-# AI Chatbot for Cybersecurity Awareness
+# College Dashboard Chatbot Assistant
 
-An interactive chatbot built with Flask and Google's Gemini AI model to educate users about cybersecurity best practices, safe online behavior, and threat prevention.
+An interactive chatbot built with Flask and Google's Gemini AI model, integrated into a college dashboard website. The chatbot is designed to respond to user queries and assist in navigating the system, providing a simple yet functional conversational interface for students, faculty, and staff.
 
 ## Features
 
 - Real-time chat interface with streaming responses
 - Markdown formatting for clear and structured responses
-- Comprehensive cybersecurity guidance covering:
-  - Password security
-  - Phishing attacks
-  - Malware prevention
-  - Social engineering
-  - Data privacy
+- Comprehensive college assistance covering:
+  - Course registration and academic information
+  - Exam schedules and grading information
+  - Campus facilities and resources
+  - Student services and support
+  - Dashboard navigation and features
 
 ## Tech Stack
 
 - Flask (Python web framework)
 - Google Gemini AI
-- Flask-CORS
+- Flask-CORS for integration with college dashboard
 - HTML/CSS/JavaScript (Frontend)
+- JSON for data exchange format
 
 ## Setup
 
@@ -46,9 +47,22 @@ python app.py
 
 The server will start at `http://localhost:5000`
 
+## Integration
+
+This chatbot is designed to be embedded within a college dashboard website. The system demonstrates client-server communication using:
+
+- Frontend: HTML, CSS, and JavaScript
+- Backend: Flask (Python)
+- Data exchange: JSON format
+
 ## Usage
 
-Visit the web interface and start asking questions about cybersecurity. The chatbot provides formatted, easy-to-understand responses with practical guidance on staying safe online.
+Students and staff can interact with the chatbot to:
+- Get information about courses and registration
+- Check exam schedules
+- Find campus resources
+- Navigate the dashboard interface
+- Access student services
 
 ## Author
 

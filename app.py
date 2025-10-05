@@ -4,7 +4,7 @@ from chat import client, types
 import json
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-CORS(app)  # Enable CORS for all routes
+CORS(app)  # Enable CORS for all routes - allows integration with college dashboard
 
 @app.route("/")
 def index():
@@ -26,28 +26,29 @@ def chat():
     if "format" in user_message.lower() or "markdown" in user_message.lower():
         markdown_example = """I can format my responses using Markdown:
 
-## Headings
-**Bold text** and *italic text*
+## College Resources
+**Important deadlines** and *key information*
 
-### Lists:
-* Bullet point 1
-* Bullet point 2
-  * Nested point
+### Available Services:
+* Academic Calendar
+* Course Registration
+* Exam Schedule
+  * Final Exams
+  * Mid-terms
 
-### Code examples:
-```python
-def secure_password(password):
-    # Password should be at least 12 characters
-    if len(password) < 12:
-        return False
-    return True
+### Navigation Example:
+```
+To find your grades:
+1. Click on 'Academic Records' in the main menu
+2. Select 'Grade History'
+3. Choose the semester you want to view
 ```
 
-> And blockquotes for important information
+> Reminder: The course registration deadline for next semester is October 15, 2025!
 
-[Links to resources](https://www.cybersecurity.gov)
+[College Website](https://www.college-example.edu)
 
-Just ask your questions normally, and I'll use formatting to make my answers clearer!"""
+Just ask your questions about the college dashboard, and I'll help you navigate the system!"""
         
         # Return JSON for POST, EventStream for GET
         if request.method == "POST":
@@ -63,20 +64,20 @@ Just ask your questions normally, and I'll use formatting to make my answers cle
                     content_type='text/event-stream')
 
 def generate_stream_response(input_text):
-    system_instructions = """You are a cybersecurity awareness chatbot. Your primary goal is to educate users about safe online practices, identify potential security threats, and provide guidance on protecting personal and organizational data. 
+    system_instructions = """You are a college dashboard assistant chatbot. Your primary goal is to help users navigate the college system, answer questions about college services, and provide assistance with using the dashboard interface. 
 
-    You should offer clear, accurate, and practical advice on topics such as password security, phishing attacks, malware prevention, social engineering, and data privacy. Maintain a friendly and informative tone, and ensure that your responses are easy to understand, even for non-technical users.
+    You should offer clear, accurate, and practical information about topics such as course registration, exam schedules, academic calendar, student resources, faculty information, and campus facilities. Maintain a friendly and informative tone, and ensure that your responses are easy to understand for all users.
 
     Use Markdown formatting to make your responses more readable:
     - Use headings (## and ###) to organize information
-    - Use **bold** for important terms or warnings
+    - Use **bold** for important terms or deadlines
     - Use *italics* for emphasis
     - Use bullet points or numbered lists for steps or multiple items
-    - Use `code` formatting for commands or technical terms
+    - Use `code` formatting for specific menu options or commands
     - Use ```code blocks``` for longer examples
-    - Use > blockquotes for important notes or warnings
+    - Use > blockquotes for important notes or announcements
 
-    Encourage users to adopt strong cybersecurity habits and stay vigilant against evolving threats.
+    Encourage users to explore the college dashboard features and make the most of the available resources.
     you are developed and trained by Tanmay Bandagale."""
     
     response = client.models.generate_content_stream(
@@ -95,4 +96,5 @@ def generate_stream_response(input_text):
     yield f"data: {json.dumps({'done': True})}\n\n"
 
 if __name__ == "__main__":
+    # Running on port 5000 for integration with college dashboard website
     app.run(debug=True, host="0.0.0.0", port=5000)

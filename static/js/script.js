@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearBtn = document.getElementById('clearBtn');
     const themeToggle = document.getElementById('themeToggle');
     const aboutLink = document.getElementById('aboutLink');
+    const chatToggleBtn = document.getElementById('chatToggleBtn');
+    const chatContainer = document.getElementById('chatContainer');
 
     // Configure marked options
     marked.setOptions({
@@ -285,9 +287,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // About link
     aboutLink.addEventListener('click', (e) => {
         e.preventDefault();
-        sendMessage("Tell me about this cybersecurity chatbot and what it can do");
+        sendMessage("Tell me about this college dashboard assistant and what it can do");
     });
 
     // Set focus on input when page loads
     userInput.focus();
+    
+    // Initially hide the chat container
+    chatContainer.classList.add('hidden');
+    
+    // Toggle chat visibility when the toggle button is clicked
+    chatToggleBtn.addEventListener('click', () => {
+        chatContainer.classList.toggle('hidden');
+        if (!chatContainer.classList.contains('hidden')) {
+            userInput.focus();
+        }
+    });
 });

@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         messageContent.className = 'message-content';
         messageContent.id = 'currentBotContent';
         
-        messageDiv.appendChild(avatar);
-        messageDiv.appendChild(messageContent);
+/*         messageDiv.appendChild(avatar);
+ */        messageDiv.appendChild(messageContent);
         chatBox.appendChild(messageDiv);
         
         return messageContent;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content.appendChild(dot);
         }
         
-        indicator.appendChild(avatar);
+        /* indicator.appendChild(avatar); */
         indicator.appendChild(content);
         chatBox.appendChild(indicator);
         chatBox.scrollTop = chatBox.scrollHeight;
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         hljs.highlightElement(block);
                     });
                     
-                    messageDiv.appendChild(avatar);
+                    /* messageDiv.appendChild(avatar); */
                     messageDiv.appendChild(messageContent);
                     chatBox.appendChild(messageDiv);
                 } else {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     messageContent.className = 'message-content';
                     messageContent.textContent = 'Sorry, there was an error processing your request.';
                     
-                    messageDiv.appendChild(avatar);
+                    /* messageDiv.appendChild(avatar); */
                     messageDiv.appendChild(messageContent);
                     chatBox.appendChild(messageDiv);
                     
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messageContent.className = 'message-content';
             messageContent.textContent = 'Sorry, there was an error connecting to the server.';
             
-            messageDiv.appendChild(avatar);
+            /* messageDiv.appendChild(avatar); */
             messageDiv.appendChild(messageContent);
             chatBox.appendChild(messageDiv);
             

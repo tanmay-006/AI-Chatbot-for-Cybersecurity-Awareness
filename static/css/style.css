@@ -12,7 +12,7 @@
     --user-bg: #4b2e83;
     --user-text: white;
     --bot-text: #333;
-    --bg-color: #f5f5f5;
+    --bg-color: #ffffff;
     --container-bg: white;
     --border-color: #eaeaea;
 }
@@ -81,8 +81,8 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     position: fixed; /* Fixed position for animations */
-    bottom: 100px; /* Position above the toggle button */
-    right: 30px; /* Align to the right side */
+    bottom: 00px; /* Position above the toggle button */
+    right: 0px; /* Align to the right side */
     z-index: 999;
 }
 
